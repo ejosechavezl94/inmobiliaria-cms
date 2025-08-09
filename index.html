@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tu Asesor Inmobiliario · Marlin López</title>
+  <meta name="description" content="Encuentra tu hogar ideal en Venezuela con Tu Asesor Inmobiliario Marlin López." />
+  <link rel="canonical" href="https://tuasesorinmobiliario.com/" />
+  <meta property="og:title" content="Tu Asesor Inmobiliario · Marlin López" />
+  <meta property="og:description" content="Hogares en Caracas,y más." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tuasesorinmobiliario.com/" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+    .logo-avil { width:52px; height:52px; border-radius:12px; background: linear-gradient(45deg,#0d6efd,#6ea8fe); position:relative; overflow:hidden; display:inline-block }
+    .logo-avil::after { content:""; position:absolute; inset:auto 0 0 0; height:60%; background:linear-gradient(to top,#fff,transparent); clip-path: polygon(0 100%, 18% 55%, 38% 65%, 58% 35%, 78% 55%, 100% 25%, 100% 100%); }
+    .hero { background-image:url('https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&q=80&w=1920'); background-size:cover; background-position:center; min-height:60vh; }
+    .property-card { transition: transform .25s ease, box-shadow .25s ease; }
+    .property-card:hover { transform: translateY(-4px); box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.15); }
+    .ratio-4x3{ aspect-ratio:4/3; object-fit:cover; }
+    .ratio-16x9{ aspect-ratio:16/9; object-fit:cover; }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
+        <span class="logo-avil"></span>
+        <span>Tu Asesor Inmobiliario</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#propiedades">Propiedades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="inicio" class="hero d-flex align-items-center text-white">
+    <div class="container text-center py-5">
+      <h1 class="display-5 fw-bold">Encuentra tu hogar ideal en Venezuela</h1>
+      <p class="lead mb-4">Asesoría personalizada en Caracas, Valencia, Maracaibo y más.</p>
+      <a href="#propiedades" class="btn btn-primary btn-lg">Ver propiedades</a>
+    </div>
+  </header>
+
+  <section id="propiedades" class="py-5">
+    <div class="container">
+      <h2 class="h1 text-center fw-bold mb-4">Nuestras Propiedades</h2>
+      <div id="prop-grid" class="row g-4"></div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="propModal" tabindex="-1" aria-labelledby="propModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="propModalLabel">Propiedad</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div id="propCarousel" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner" id="carouselInner"></div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#propCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#propCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+          <div class="mt-3">
+            <p class="mb-1 text-secondary" id="propMeta"></p>
+            <p class="h5" id="propPrice"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="contacto" class="bg-light py-5 border-top">
+    <div class="container text-center">
+      <h2 class="h1 fw-bold mb-4">Contáctanos</h2>
+      <p class="mb-4">Puedes escribirnos directamente por WhatsApp o enviarnos un correo.</p>
+      <a class="btn btn-success btn-lg me-2" href="https://wa.me/584241768868?text=Hola%2C%20estoy%20interesado%20en%20una%20propiedad" target="_blank" rel="noopener">WhatsApp</a>
+      <button id="btnCorreo" class="btn btn-primary btn-lg">Enviar correo</button>
+      <p class="mt-4 mb-0">Teléfono: <a href="tel:+584241768868" class="link-dark">+58 424 176 88 68</a></p>
+      <p class="mb-0">Correo: <a href="mailto:mar239403@gmail.com" class="link-dark">mar239403@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white py-4">
+    <div class="container text-center small">
+      <p class="mb-1">&copy; 2025 Tu Asesor Inmobiliario Marlin López. Todos los derechos reservados.</p>
+      <p class="mb-0"><a class="link-light text-decoration-underline" href="#">Política de Privacidad</a> · <a class="link-light text-decoration-underline" href="#">Aviso legal</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  async function cargarDatos() {
+    try {
+      const res = await fetch('/data/propiedades.json', { cache: 'no-store' });
+      const data = await res.json();
+      return Array.isArray(data.items) ? data.items : [];
+    } catch (e) {
+      console.error('No se pudo cargar propiedades', e);
+      return [];
+    }
+  }
+
+  (async () => {
+    const PROPIEDADES = await cargarDatos();
+
+    const grid = document.getElementById('prop-grid');
+    grid.innerHTML = PROPIEDADES.map(p => `
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="card shadow-sm property-card h-100">
+          <img class="card-img-top ratio-4x3" src="${p.portada}" alt="${p.titulo}" loading="lazy" />
+          <div class="card-body d-flex flex-column">
+            <h3 class="h5 card-title">${p.titulo}</h3>
+            <p class="card-text text-muted mb-1">${p.features}</p>
+            <p class="fw-semibold mb-3">$${Number(p.precio||0).toLocaleString('es-ES')}</p>
+            <div class="mt-auto d-grid">
+              <button class="btn btn-primary" data-prop-id="${p.id}" data-bs-toggle="modal" data-bs-target="#propModal">Ver más</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    `).join('');
+
+    const carouselInner = document.getElementById('carouselInner');
+    const propMeta = document.getElementById('propMeta');
+    const propPrice = document.getElementById('propPrice');
+    const propModalLabel = document.getElementById('propModalLabel');
+    let carouselInstance = null;
+
+    grid.addEventListener('click', e => {
+      const btn = e.target.closest('button[data-prop-id]');
+      if (!btn) return;
+      const p = PROPIEDADES.find(x => x.id === btn.dataset.propId);
+      if (!p) return;
+      propModalLabel.textContent = p.titulo;
+      propMeta.textContent = `${p.features} · ${p.ciudad}`;
+      propPrice.textContent = `$${Number(p.precio||0).toLocaleString('es-ES')}`;
+      if (carouselInstance) { carouselInstance.dispose(); }
+      carouselInner.innerHTML = (p.fotos || []).map((src, i) => `
+        <div class="carousel-item ${i === 0 ? 'active' : ''}">
+          <img src="${src}" class="d-block w-100 ratio-16x9" alt="${p.titulo} foto ${i+1}" loading="lazy" />
+        </div>
+      `).join('');
+      carouselInstance = new bootstrap.Carousel(document.getElementById('propCarousel'), { interval: 5000 });
+    });
+
+    document.getElementById('btnCorreo').addEventListener('click', () => {
+      window.location.href = 'mailto:mar239403@gmail.com';
+    });
+  })();
+  </script>
+</body>
+</html>

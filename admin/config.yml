@@ -1,0 +1,32 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+site_url: "/"
+logo_url: "/uploads/logo.png"
+
+collections:
+  - name: "data"
+    label: "Datos del sitio"
+    files:
+      - name: "propiedades"
+        label: "Propiedades (listado)"
+        file: "data/propiedades.json"
+        fields:
+          - label: "Propiedades"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Título", name: "titulo", widget: "string"}
+              - {label: "Precio (USD)", name: "precio", widget: "number", value_type: "int"}
+              - {label: "Características", name: "features", widget: "string"}
+              - {label: "Ciudad", name: "ciudad", widget: "string"}
+              - {label: "Portada", name: "portada", widget: "image"}
+              - label: "Fotos"
+                name: "fotos"
+                widget: "list"
+                field: {label: "Foto", name: "foto", widget: "image"}
