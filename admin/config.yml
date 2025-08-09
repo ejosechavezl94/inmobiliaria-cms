@@ -8,13 +8,12 @@ public_folder: "/images/uploads"
 collections:
   - name: "propiedades"
     label: "Propiedades"
-    folder: "propiedades"
+    folder: "data/propiedades"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Título", name: "titulo", widget: "string" }
       - { label: "Precio", name: "precio", widget: "number" }
       - { label: "Ciudad", name: "ciudad", widget: "string" }
-      - { label: "Características", name: "features", widget: "string" }
-      - { label: "Portada", name: "portada", widget: "image" }
-      - { label: "Fotos", name: "fotos", widget: "list", field: {label: "Imagen", name: "imagen", widget: "image"} }
+      - { label: "Características", name: "features", widget: "text" }
+      - { label: "Imagen principal", name: "imagen", widget: "image" }
